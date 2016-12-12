@@ -9,6 +9,7 @@ public interface CalculatorPage {
     CalculatorPage selectDeadLine(String ddl);
     CalculatorPage scrollToTop();
     CalculatorPage closePopUpWindow();
+    String getSelectedAcademicLevel();
     String getPrice();
     void clickContinueButton();
     WebDriver getDriver();

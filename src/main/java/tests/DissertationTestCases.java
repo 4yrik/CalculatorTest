@@ -1,7 +1,6 @@
 package tests;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 
 import java.util.*;
 
@@ -24,9 +23,9 @@ public class DissertationTestCases extends BaseTestCases {
     }
 
     public void testCase(){
-        calculatorPage.selectTypeOfPaper(testData().get(0)[0]);
         try {
-            String academicLevel = calculatorPage.getDriver().findElement(By.xpath("//select[@name=\"academic_level\"]//option[@selected=\"selected\"]")).getText();
+            calculatorPage.selectTypeOfPaper(testData().get(0)[0]);
+            String academicLevel = calculatorPage.getSelectedAcademicLevel();
             Assert.assertEquals("Professional", academicLevel);
             report.append(String.format("%s Type of Paper \"Dissertation\" Academic level is \"Professional\"\n", this.getClass().getSimpleName()));
         }catch (Error e){

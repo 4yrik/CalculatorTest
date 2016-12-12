@@ -87,6 +87,16 @@ public class PWCalculatorPage implements CalculatorPage {
         return this;
     }
 
+    public String getSelectedAcademicLevel(){
+        String result = null;
+        for(WebElement academicLevel: academicLevels){
+            if(academicLevel.isSelected()){
+                result = academicLevel.getText();
+            }
+        }
+        return result;
+    }
+
     public String getPrice(){
         return price.getText().substring(1);
     }
